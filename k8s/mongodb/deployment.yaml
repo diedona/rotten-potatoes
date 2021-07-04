@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-mongo
+spec:
+  selector:
+    matchLabels:
+      app: cluster-mongo
+  template:
+    metadata:
+      labels:
+        app: cluster-mongo
+    spec:
+      containers:
+      - name: cluster-mongo
+        image: mongo:4.4.6
+        ports:
+          - containerPort: 27017
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: mongouser
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: mongopwd

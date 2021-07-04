@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cluster-web
+spec:
+  selector:
+    matchLabels:
+      app: cluster-web
+  template:
+    metadata:
+      labels:
+        app: cluster-web
+    spec:
+      containers:
+      - name: cluster-web
+        image: diedona/rotten-potatoes:v1
+        ports:
+          - containerPort: 5000
+        env:
+          - name: MONGO_DB
+            value: admin
+          - name: MONGO_HOST
+            value: cluster-mongo-service
+          - name: MONGO_PORTS
+            value: "27017"
+          - name: MONGO_USERNAME
+            value: mongouser
+          - name: MONGO_PASSWORD
+            value: mongopwd
