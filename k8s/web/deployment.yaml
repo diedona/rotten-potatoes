@@ -17,13 +17,13 @@ spec:
         ports:
           - containerPort: 5000
         env:
-          - name: MONGO_DB
+          - name: MONGODB_DB
             value: admin
-          - name: MONGO_HOST
+          - name: MONGODB_HOST
             value: cluster-mongo-service
-          - name: MONGO_PORTS
+          - name: MONGODB_PORTS
             value: "27017"
-          - name: MONGO_USERNAME
+          - name: MONGODB_USERNAME
             value: mongouser
-          - name: MONGO_PASSWORD
+          - name: MONGODB_PASSWORD
             value: mongopwd
