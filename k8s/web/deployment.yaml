@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cluster-web
-        image: diedona/rotten-potatoes:v1
+        image: diedona/rotten-potatoes:v2
         ports:
           - containerPort: 5000
         env:
