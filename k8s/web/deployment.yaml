@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: cluster-web
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: cluster-web
